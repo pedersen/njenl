@@ -1,0 +1,93 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    height: 100%;
+    min-width: 320px;
+}
+
+a {
+    color: #aaaaaa;
+}
+
+dt {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #aaaaaa;
+    margin-top: 0.25em;
+}
+
+#countymap {
+    max-width: 100%;
+}
+
+#navwrapper {
+    max-width: 300px;
+    float: left;
+    position: relative;
+    height: 100%;
+    position: fixed;
+}
+
+#navwrapper #header img {
+    max-height: 300px;
+}
+
+#header {
+    text-align: center;
+}
+
+#ingresslogo {
+    display: none;
+}
+
+#menuwrapper {
+    background-color: #02bf02;
+    margin-top: 1em;
+    padding-right: 1em;
+    padding: 0.25em;
+    height: 100%;
+}
+
+#menuwrapper ul {
+    list-style-type: none;
+    margin-left: -2em;
+}
+
+#menuwrapper ul li {
+    border-style: groove;
+    border-width: small;
+}
+
+#menuwrapper ul li a {
+    color: #000000;
+}
+
+#menuheightmaker {
+    height: 100%;
+}
+
+#contentwrapper {
+    padding-left: 2em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    border-style: inset;
+    border-width: small;
+    border-color: #8ae18a;
+    background-color: #02bf02;
+    color: #000000;
+    padding: 0.125em;
+}
+
+/* Media Queries */
+@media screen and (max-width:480px) {
+    #header { display: none; }
+    body { background-image: url('/images/nj-logo-background.png'); }
+    #navwrapper { background-color: #02bf02; }
+    #menuwrapper { display: none; }
+    #ingresslogo { display: block; margin: 0.25em; align: center;}
+}

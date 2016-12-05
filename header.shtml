@@ -1,0 +1,29 @@
+<!--$config errmsg="[Oops, something broke.]" -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>NJ Enlightened: <!--#echo var="pagetitle" --></title>
+    <link href="styles/main.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navwrapper" style="min-width: 100px;">
+      <div id="ingresslogo">
+	<img id="menutoggle2" alt="Menu Access" title="Menu Access" src="/images/dots-menu.png"/>
+	<img id="menutoggle" alt="Menu Access" title="Menu Access" src="/images/ingress-menu.png"/>
+      </div>
+      <div id="header">
+	<a href="/"><img alt="NJ Enlightened Logo" src="images/nj-logo.png"/></a>
+      </div>
+      <div id="menuwrapper">
+	<ul id="navmenu">
+	  <li><a href="/">NJ Enlightened</a></li>
+	  <li><a href="https://docs.google.com/forms/d/1Q5uddTZ44oy8LCcIrFb4MLSMey1ahxFzFoxLDSrPgnE/viewform" target="_blank">Join Us</a></li>
+	  <li><a href="communities.html">Local Communities</a></li>
+	  <li><a href="faq.html">FAQ</a></li>
+	  <li><a href="outside.html">Additional Resources</a></li>
+	</ul>
+      </div>
+    </div>
+    <div id="contentwrapper">
+      <h1><!--#echo var="pagetitle" --></h1>

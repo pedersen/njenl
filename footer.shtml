@@ -1,0 +1,198 @@
+      </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+      var agents = {
+	  'agodeshalf': {'url':' https://plus.google.com/u/0/114788198872673773354/about'},
+	  'AWiseFool': {'url': 'https://plus.google.com/u/0/105479328040877351867/posts'},
+	  'darthnugget': {'url': 'http://bit.ly/darthnugget'},
+	  'docwho2100': {'url': 'https://plus.google.com/u/0/+JoJoStratton/posts', 'comment': 'Also a member of Operation Essex, the storyline decoding group'},
+      'devylkyn':{'url': 'https://plus.google.com/u/0/100599936129034439746/about'},
+	  'Encoder': {'url': 'https://plus.google.com/u/0/+LouKohn/posts'},
+	  'ForUm8417': {'url': 'http://bit.ly/forum8417'},
+      'hartclimbs': {'url': 'https://plus.google.com/u/0/+hartclimbs/about'},
+	  'Hugg727': {'url': 'https://plus.google.com/u/0/103722797633422055771/about'},
+	  'Joe3Smokes': {'url': 'https://plus.google.com/u/0/113219695100525606943/posts'},
+	  'kmiloco': {'url': 'https://plus.google.com/u/0/107425820290666412240/posts'},
+	  'nynjamatt': {'url': 'https://plus.google.com/u/0/109795995369870694536/about', 'comment': '(Linden and nearby only)'},
+	  'Palidor': {'url': 'https://plus.google.com/u/0/+JasonKahn1/about'},
+	  'Sarap': {'url': 'https://plus.google.com/u/0/113587738019945594667/about'},
+	  'Shadowfall': {'url': 'http://bit.ly/shadowfall'},
+	  'sirpug': {'url': 'https://plus.google.com/u/0/+ThomasGiacchetti/posts'},
+	  'Staryangel': {'url': 'https://plus.google.com/u/0/104682917541166951294/about'},
+      'wrxdoggy': {'url': 'https://plus.google.com/u/0/102031434928422741977/about'}
+      };
+
+      var counties = {
+	  'atlantic': {
+	      'name': 'Atlantic',
+	      'comments': '',
+	      'agents': ['docwho2100']
+	  },
+	  'bergen': {
+	      'name': 'Bergen',
+	      'comments': '',
+	      'agents': ['sirpug','Joe3Smokes']
+	  },
+	  'burlington': {
+	      'name': 'Burlington',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'camden': {
+	      'name': 'Camden',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'capemay': {
+	      'name': 'Cape May',
+	      'comments': '',
+	      'agents': ['docwho2100']
+	  },
+	  'cumberland': {
+	      'name': 'Cumberland',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'essex': {
+	      'name': 'Essex',
+	      'comments': '',
+	      'agents': ['Hugg727']
+	  },
+	  'gloucester': {
+	      'name': 'Gloucester',
+	      'comments': '',
+	      'agents': ['Encoder']
+	  },
+	  'hudson': {
+	      'name': 'Hudson',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'hunterdon': {
+	      'name': 'Hunterdon',
+	      'comments': '',
+	      'agents': ['Shadowfall']
+	  },
+	  'middlesex': {
+	      'name': 'Middlesex',
+	      'comments': '',
+	      'agents': ['kmiloco','Staryangel']
+	  },
+	  'mercer': {
+	      'name': 'Mercer',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'monmouth': {
+	      'name': 'Monmouth',
+	      'comments': '',
+	      'agents': ['Palidor','Staryangel']
+	  },
+	  'morris': {
+	      'name': 'Morris',
+	      'comments': '',
+	      'agents': ['devylkyn','hartclimbs', 'wrxdoggy']
+	  },
+	  'ocean': {
+	      'name': 'Ocean',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'passaic': {
+	      'name': 'Passaic',
+	      'comments': '',
+	      'agents': ['AWiseFool']
+	  },
+	  'salem': {
+	      'name': 'Salem',
+	      'comments': '',
+	      'agents': []
+	  },
+	  'somerset': {
+	      'name': 'Somerset',
+	      'comments': '',
+	      'agents': ['agodeshalf','darthnugget','Sarap']
+	  },
+	  'sussex': {
+	      'name': 'Sussex',
+	      'comments': '',
+	      'agents': ['Shadowfall']
+	  },
+	  'union': {
+	      'name': 'Union',
+	      'comments': '',
+	      'agents': ['agodeshalf','ForUm8417','kmiloco','nynjamatt']
+	  },
+	  'warren': {
+	      'name': 'Warren',
+	      'comments': 'Home of the Warren Horsemen (also known as the Warren Goonies thanks to more than a few Resistance). They are always happy to help people level up, do gear drops, and build farms.',
+	      'agents': ['darthnugget','Shadowfall']
+	  }
+      }
+      function resizePage(evt) {
+	  var navwidth = $('#navwrapper').width();
+	  var width=$('#contentwrapper').width() - navwidth;
+	  $('#contentwrapper').css({'margin-left': navwidth + "px"});
+	  var njenl = $('#navwrapper #header img');
+	  njenl.height('300px').css({'max-height': '300px'});
+	  var last = $('#navmenu li:last-child')[0];
+	  var $win = $(window).height();
+	  while (last.getBoundingClientRect().bottom > $win && njenl.height() > 10) {
+	      var logoheight = njenl.height() - 10;
+	      njenl.height(logoheight + 'px');
+	  }
+      }
+
+      function openNjEnlMenu(evt) {
+	  $('#menuwrapper').slideToggle('medium');
+      }
+
+      function displayCountyInfo(evt) {
+          var county = evt.target.id;
+	  if (!county) {
+	      for (var i=0; i<evt.target.classList.length; i++) {
+		  if (counties[evt.target.classList[i]]) {
+		      county = evt.target.classList[i];
+		  }
+	      }
+	  }
+	  county = counties[county];
+	  var info = $('#agentinfo');
+	  info.empty();
+	  $('#agentinfo').empty();
+	  info.append($('<h2>' + county.name + ' County</h2>'));
+	  if (county.comments) {
+	      info.append($('<p>' + county.comments + '</p>'));
+	  }
+	  var agentlist=$('<ul></ul>');
+	  if (county.agents.length == 0) {
+	      agentlist.append($('<p>No agents have requested to be listed here.</p>'));
+	  } else {
+	      for (var i=0; i<county.agents.length; i++) {
+		  var name = county.agents[i];
+		  var url = agents[name].url;
+		  var comment = agents[name].comment ? ' ' + agents[name].comment : '';
+		  agentlist.append($('<li><a href="' + url + '">' + name + '</a>' + comment + '</li>'));
+	      }
+	  }
+	  info.append(agentlist);
+	  console.log(county);
+      }
+
+      function toggleAnswer(evt) {
+	  $(evt.target).next().toggle('fast');
+      }
+
+      $(document).ready(function() {
+	  $('#ingresslogo').click(openNjEnlMenu);
+	  $(window).resize(resizePage);
+	  resizePage();
+          $('path.county, path.letter').click(displayCountyInfo);
+	  $('dd').hide();
+	  $('dt').click(toggleAnswer);
+	  
+      });
+      
+    </script>
+    </body>
+</html>
